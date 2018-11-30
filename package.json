@@ -1,0 +1,32 @@
+{
+  "name": "goaway",
+  "version": "1.0.0",
+  "description": "Tiny NodeJS Static Web Server",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/*",
+    "fix": "eslint --fix src/*"
+  },
+  "pre-commit": [
+    "fix",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ythvg/goaway.git"
+  },
+  "keywords": [
+    "static",
+    "webserver"
+  ],
+  "author": "Spike Jim.Fun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ythvg/goaway/issues"
+  },
+  "homepage": "https://github.com/ythvg/goaway#readme",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "pre-commit": "^1.2.2"
+  }
+}
