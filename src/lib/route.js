@@ -6,6 +6,7 @@ const conf = require('../config/defaultConfig')
 const mime = require('../lib/mime')
 const compress = require('../lib/compress')
 const range = require('./range')
+const isFresh = require('./cache')
 const stat = promisify(fs.stat)
 const readdir = promisify(fs.readdir)
 
@@ -19,6 +20,12 @@ module.exports = async function (req, res, filePath) {
       res.statusCode = 200
       const contentType = mime(filePath)
       res.setHeader('Content-Type', contentType)
+
+      if (isFresh(stats, req, res)) {
+        res.statusCode = 304
+        res.end()
+        return
+      }
 
       let rs 
       const {code, start, end} = range(stats.size, req, res)
