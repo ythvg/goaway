@@ -21,7 +21,8 @@
   },
   "keywords": [
     "static",
-    "webserver"
+    "webserver",
+    "cli"
   ],
   "author": "Spike Jim.Fun",
   "license": "ISC",

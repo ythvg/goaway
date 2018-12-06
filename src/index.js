@@ -23,5 +23,5 @@ const argv = yargs
   .help()
   .argv
 
-  const server = new Server(argv);
-  server.start()
+const server = new Server(argv)
+server.start()
